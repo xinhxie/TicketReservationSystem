@@ -1,0 +1,20 @@
+{
+  "sqltools.connections": [
+    {
+      "pgOptions": {
+        "ssl": {
+          "rejectUnauthorized": true
+        }
+      },
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "localhost",
+      "driver": "PostgreSQL",
+      "name": "ticket booking",
+      "database": "neondb",
+      "password": "npg_wAjB46oVSTdP",
+      "username": "neondb_owner",
+      "connectString": "postgresql://neondb_owner:npg_wAjB46oVSTdP@ep-orange-band-ah7cwfnm-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+    }
+  ]
+}
