@@ -5,7 +5,7 @@ DROP TYPE IF EXISTS ticket_status;
 
 -- 1. Create the Events table
 CREATE TABLE IF NOT EXISTS events (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     total_tickets INTEGER NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -17,7 +17,7 @@ CREATE TYPE ticket_status AS ENUM ('AVAILABLE', 'RESERVED', 'SOLD');
 -- 3. Create the Tickets table using the Enum type directly
 -- Remove the 'ALTER TABLE' command later by defining it correctly here
 CREATE TABLE IF NOT EXISTS tickets (
-    id SERIAL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     event_id INTEGER REFERENCES events(id),
     status ticket_status DEFAULT 'AVAILABLE'::ticket_status,
     version INTEGER DEFAULT 0,              -- Used for Optimistic Locking
